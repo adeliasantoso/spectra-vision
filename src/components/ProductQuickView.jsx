@@ -47,7 +47,7 @@ const ProductQuickView = memo(({ product, onClose }) => {
               <img
                 src={product.images ? product.images[0] : product.image}
                 alt={product.name}
-                className="w-full aspect-square object-cover rounded-2xl shadow-lg"
+                className="w-full h-64 md:h-80 object-contain rounded-2xl shadow-lg"
               />
               {/* Product tag */}
               <div className="absolute top-3 left-3 bg-black text-white px-3 py-1 rounded-full text-xs font-medium">

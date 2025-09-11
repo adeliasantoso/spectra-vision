@@ -176,7 +176,7 @@ const Cart = () => {
                       <img
                         src={item.images ? item.images[0] : item.image}
                         alt={item.name}
-                        className="w-full h-full object-cover rounded-2xl"
+                        className="w-full h-full object-contain rounded-2xl"
                       />
                     </div>
 

@@ -9,7 +9,7 @@ import OptimizedImage from "../components/OptimizedImage";
 import { measurePerformance, monitorBundleSize } from "../utils/performance";
 import { useAutoRefresh } from "../hooks/useAutoRefresh";
 import { setupCacheManagement } from "../utils/simpleCache";
-import spectraGlassesImage from "../assets/images/landing-page/spectra1.webp";
+import spectraGlassesImage from "../assets/images/landing-page/spectra1-hero.webp";
 import experienceDudeImage from "../assets/images/landing-page/experience-dude.webp";
 import social1Image from "../assets/images/landing-page/social1.webp";
 import social2Image from "../assets/images/landing-page/social2.webp";
@@ -71,7 +71,7 @@ const Home = React.memo(() => {
   // Loop is handled by YouTube embed parameters
   useEffect(() => {
     // YouTube embeds handle autoplay and loop automatically
-    console.log('Hero video is handled by YouTube embed');
+    console.log("Hero video is handled by YouTube embed");
   }, []);
 
   // Animation observer for scroll-triggered animations
@@ -130,16 +130,16 @@ const Home = React.memo(() => {
             ref={heroVideoRef}
             src="https://www.youtube.com/embed/fNUB1H8sJwY?autoplay=1&mute=1&loop=1&playlist=fNUB1H8sJwY&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&origin=https://localhost:5174"
             className="w-full h-full transition-opacity duration-500"
-            style={{ 
+            style={{
               opacity: heroVideoOpacity,
-              position: 'absolute',
-              top: '45%', // Naik sedikit dari 40% ke 45%
-              left: '50%',
-              width: '100vw',
-              height: '56.25vw', // 16:9 aspect ratio
-              minHeight: '100vh',
-              minWidth: '177.78vh', // 16:9 aspect ratio
-              transform: 'translate(-50%, -50%)'
+              position: "absolute",
+              top: "45%", // Naik sedikit dari 40% ke 45%
+              left: "50%",
+              width: "100vw",
+              height: "56.25vw", // 16:9 aspect ratio
+              minHeight: "100vh",
+              minWidth: "177.78vh", // 16:9 aspect ratio
+              transform: "translate(-50%, -50%)",
             }}
             frameBorder="0"
             allow="autoplay; encrypted-media"
@@ -154,9 +154,9 @@ const Home = React.memo(() => {
         <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
 
         {/* Content */}
-        <div className="relative z-30 flex items-end justify-center h-full pb-12 sm:pb-16 md:pb-16">
-          <div className="text-center text-white px-4 sm:px-6 md:px-6 max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-light mb-4 md:mb-6 leading-tight relative z-40">
+        <div className="relative z-30 flex items-end justify-center h-full pb-8 sm:pb-12 md:pb-16 lg:pb-20">
+          <div className="text-center text-white px-4 sm:px-6 md:px-8 lg:px-12 max-w-5xl mx-auto">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-4 sm:mb-5 md:mb-6 lg:mb-8 leading-tight relative z-40">
               <div className="mb-2">
                 <span className="animate-word-1 inline-block opacity-0">A</span>{" "}
                 <span className="animate-word-2 inline-block opacity-0">
@@ -169,7 +169,7 @@ const Home = React.memo(() => {
                   to
                 </span>
               </div>
-              <div className="font-bold text-6xl md:text-8xl -mt-2 md:-mt-4 animate-word-5 opacity-0">
+              <div className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl -mt-1 sm:-mt-2 md:-mt-3 lg:-mt-4 animate-word-5 opacity-0">
                 your mind
               </div>
             </h1>
@@ -177,10 +177,10 @@ const Home = React.memo(() => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 z-50">
           <div className="text-white/90 hover:text-white transition-all duration-300 cursor-pointer group">
-            <div className="w-6 h-10 border-2 border-white/70 rounded-full flex justify-center group-hover:border-white transition-all duration-300 bg-black/20 backdrop-blur-sm">
-              <div className="w-1 h-3 bg-white/90 rounded-full mt-2 animate-bounce group-hover:bg-white transition-all duration-300"></div>
+            <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/70 rounded-full flex justify-center group-hover:border-white transition-all duration-300 bg-black/20 backdrop-blur-sm">
+              <div className="w-1 h-2 sm:h-3 bg-white/90 rounded-full mt-1.5 sm:mt-2 animate-bounce group-hover:bg-white transition-all duration-300"></div>
             </div>
           </div>
         </div>
@@ -188,48 +188,23 @@ const Home = React.memo(() => {
 
       {/* Introducing Spectra 1.0 */}
       <section
-        id="product-intro"
-        ref={(el) => (sectionRefs.current["product-intro"] = el)}
-        className="-mt-8 pt-0 pb-0 bg-transparent relative"
+        id="product-introduction"
+        ref={(el) => (sectionRefs.current["product-introduction"] = el)}
+        className="py-24 md:py-32 bg-white"
       >
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-center -mt-4">
-          <div
-            className={`-mb-24 max-w-3xl mx-auto relative ${
-              visibleSections.has("product-intro")
-                ? "scroll-animate visible"
-                : "scroll-animate"
-            }`}
-          >
-            <div className="overflow-hidden rounded-xl sm:rounded-2xl">
-              <OptimizedImage
-                src={spectraGlassesImage}
-                alt="Spectra 1.0"
-                className={`w-full h-auto object-cover transition-all duration-1000 ease-out transform scale-125 ${
-                  visibleSections.has("product-intro")
-                    ? "opacity-100"
-                    : "opacity-0 scale-110"
-                }`}
-                priority={true}
-                style={{
-                  transitionDelay: "100ms",
-                  clipPath: "inset(30% 0 30% 0)",
-                  aspectRatio: "3/1",
-                  height: "600px"
-                }}
-              />
-            </div>
-            <div className="absolute top-0 left-0 right-0 flex items-start justify-center pt-8 sm:pt-12 md:pt-16 px-4">
-              <h2
-                className={`text-3xl md:text-5xl font-bold text-black drop-shadow-2xl text-center max-w-full whitespace-nowrap transform transition-all duration-1000 ease-out ${
-                  visibleSections.has("product-intro")
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-8 opacity-0"
-                }`}
-                style={{ transitionDelay: "200ms" }}
-              >
-                Introducing the new Spectra 1.0
-              </h2>
-            </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-black mb-24 sm:mb-28 md:mb-32 lg:mb-36">
+            Introducing the new Spectra 1.0
+          </h2>
+
+          <div className="mb-6 sm:mb-8 md:mb-10">
+            <OptimizedImage
+              src={spectraGlassesImage}
+              alt="Spectra 1.0 Smart Glasses"
+              className="w-full h-auto object-contain mx-auto"
+              style={{ maxWidth: "600px", maxHeight: "360px" }}
+              priority={true}
+            />
           </div>
         </div>
       </section>
@@ -238,7 +213,7 @@ const Home = React.memo(() => {
       <section
         id="new-video-section"
         ref={(el) => (sectionRefs.current["new-video-section"] = el)}
-        className="py-8 md:py-12 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-75 relative"
+        className="py-0 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-75 relative"
       >
         {/* Asymmetric radial gradient texture */}
         <div className="absolute inset-0 opacity-20">
@@ -260,70 +235,66 @@ const Home = React.memo(() => {
               src="https://www.youtube.com/embed/kiQ8le_fX9U?autoplay=1&mute=1&loop=1&playlist=kiQ8le_fX9U&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&origin=https://localhost:5174"
               className="w-full h-full"
               style={{
-                position: 'absolute',
-                top: '70%', 
-                left: '50%',
-                width: '100vw',
-                height: '56.25vw',
-                minHeight: '100vh',
-                minWidth: '177.78vh',
-                transform: 'translate(-50%, -50%)'
+                position: "absolute",
+                top: "70%",
+                left: "50%",
+                width: "100vw",
+                height: "56.25vw",
+                minHeight: "100vh",
+                minWidth: "177.78vh",
+                transform: "translate(-50%, -50%)",
               }}
               frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
             />
-
           </div>
 
           {/* Caption with darker contrasting background */}
-          <div className="text-center px-4 py-4 md:py-6 relative bg-gradient-to-b from-gray-800 via-gray-850 to-gray-900">
+          <div className="text-center px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 relative bg-gradient-to-b from-gray-800 via-gray-850 to-gray-900">
             {/* Dark background with subtle texture */}
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-800/95 via-gray-850/98 to-gray-900"></div>
               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_30%_20%,rgba(75,85,99,0.3)_0%,transparent_40%),radial-gradient(ellipse_at_80%_80%,rgba(55,65,81,0.2)_0%,transparent_35%)]"></div>
             </div>
 
-            {/* Subtle top border separator */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-600/50 to-transparent"></div>
-
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("new-video-section") ? "animate" : ""
                   }`}
                 >
-                  Quietly
+                  Adaptive
                 </span>{" "}
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("new-video-section") ? "animate" : ""
                   }`}
                 >
-                  tailored
+                  and
                 </span>{" "}
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("new-video-section") ? "animate" : ""
                   }`}
                 >
-                  to
+                  Timely
                 </span>{" "}
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("new-video-section") ? "animate" : ""
                   }`}
                 >
-                  you
+                  Suggestions
                 </span>
               </h3>
               <p
-                className={`elegant-paragraph text-base md:text-lg text-gray-300 max-w-2xl mx-auto ${
+                className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mx-auto px-4 sm:px-6 ${
                   visibleSections.has("new-video-section") ? "animate" : ""
                 }`}
               >
-                Adapts quietly over time, keeping things timely and on-point.
+                Smart recommendations that anticipate your needs, delivered at the perfect moment
               </p>
             </div>
           </div>
@@ -334,14 +305,14 @@ const Home = React.memo(() => {
       <section
         id="expand-universe"
         ref={(el) => (sectionRefs.current["expand-universe"] = el)}
-        className="py-8 md:py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative"
+        className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative"
       >
         {/* Asymmetric radial gradient texture */}
         <div className="absolute inset-0 opacity-15">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_70%_20%,rgba(156,163,175,0.1)_0%,transparent_45%),radial-gradient(ellipse_at_15%_80%,rgba(209,213,219,0.08)_0%,transparent_40%),radial-gradient(ellipse_at_85%_60%,rgba(156,163,175,0.06)_0%,transparent_35%)]"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-1 md:gap-2 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
             <div
               className={`lg:col-span-3 lg:pr-8 order-2 lg:order-1 relative ${
                 visibleSections.has("expand-universe")
@@ -363,7 +334,6 @@ const Home = React.memo(() => {
                   allowFullScreen
                 />
               </div>
-
             </div>
             <div
               className={`lg:col-span-2 space-y-6 md:space-y-8 order-1 lg:order-2 ${
@@ -372,7 +342,7 @@ const Home = React.memo(() => {
                   : "scroll-animate"
               }`}
             >
-              <h2 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight">
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("expand-universe") ? "animate" : ""
@@ -398,9 +368,9 @@ const Home = React.memo(() => {
                   universe
                 </span>
               </h2>
-              <div className="space-y-4 md:space-y-6">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
                 <p
-                  className={`elegant-paragraph text-sm md:text-base text-gray-600 leading-relaxed ${
+                  className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${
                     visibleSections.has("expand-universe") ? "animate" : ""
                   }`}
                   style={{ transitionDelay: "0.4s" }}
@@ -410,7 +380,7 @@ const Home = React.memo(() => {
                   preferences, even those you haven't yet put into words.
                 </p>
                 <p
-                  className={`elegant-paragraph text-sm md:text-base text-gray-600 leading-relaxed ${
+                  className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${
                     visibleSections.has("expand-universe") ? "animate" : ""
                   }`}
                   style={{ transitionDelay: "0.6s" }}
@@ -435,8 +405,8 @@ const Home = React.memo(() => {
         <div className="absolute inset-0 opacity-18">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_25%_15%,rgba(156,163,175,0.12)_0%,transparent_42%),radial-gradient(ellipse_at_90%_85%,rgba(209,213,219,0.1)_0%,transparent_38%),radial-gradient(ellipse_at_60%_50%,rgba(156,163,175,0.07)_0%,transparent_32%)]"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-1 md:gap-2 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
             <div
               className={`lg:col-span-2 space-y-6 md:space-y-8 ${
                 visibleSections.has("unlock-barriers")
@@ -444,7 +414,7 @@ const Home = React.memo(() => {
                   : "scroll-animate"
               }`}
             >
-              <h2 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight">
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("unlock-barriers") ? "animate" : ""
@@ -481,9 +451,9 @@ const Home = React.memo(() => {
                   barriers
                 </span>
               </h2>
-              <div className="space-y-4 md:space-y-6">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
                 <p
-                  className={`elegant-paragraph text-sm md:text-base text-gray-600 leading-relaxed ${
+                  className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${
                     visibleSections.has("unlock-barriers") ? "animate" : ""
                   }`}
                 >
@@ -491,7 +461,7 @@ const Home = React.memo(() => {
                   to help you move beyond everyday limitations.
                 </p>
                 <p
-                  className={`elegant-paragraph text-sm md:text-base text-gray-600 leading-relaxed ${
+                  className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${
                     visibleSections.has("unlock-barriers") ? "animate" : ""
                   }`}
                 >
@@ -522,7 +492,6 @@ const Home = React.memo(() => {
                   allowFullScreen
                 />
               </div>
-
             </div>
           </div>
         </div>
@@ -554,24 +523,23 @@ const Home = React.memo(() => {
               src="https://www.youtube.com/embed/K-giE2RrBWE?autoplay=1&mute=1&loop=1&playlist=K-giE2RrBWE&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&origin=https://localhost:5174"
               className="w-full h-full"
               style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                width: '100vw',
-                height: '56.25vw',
-                minHeight: '100vh',
-                minWidth: '177.78vh',
-                transform: 'translate(-50%, -50%)'
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: "100vw",
+                height: "56.25vw",
+                minHeight: "100vh",
+                minWidth: "177.78vh",
+                transform: "translate(-50%, -50%)",
               }}
               frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
             />
-
           </div>
 
           {/* Caption with darker contrasting background */}
-          <div className="text-center px-4 py-4 md:py-6 relative bg-gradient-to-b from-gray-800 via-gray-850 to-gray-900">
+          <div className="text-center px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 relative bg-gradient-to-b from-gray-800 via-gray-850 to-gray-900">
             {/* Dark background with subtle texture */}
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-800/95 via-gray-850/98 to-gray-900"></div>
@@ -582,35 +550,42 @@ const Home = React.memo(() => {
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-600/50 to-transparent"></div>
 
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("smart-recognition") ? "animate" : ""
                   }`}
                 >
-                  Recognizes
+                  Attuned
                 </span>{" "}
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("smart-recognition") ? "animate" : ""
                   }`}
                 >
-                  the
+                  to
                 </span>{" "}
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("smart-recognition") ? "animate" : ""
                   }`}
                 >
-                  moment
+                  Your
+                </span>{" "}
+                <span
+                  className={`elegant-title-word ${
+                    visibleSections.has("smart-recognition") ? "animate" : ""
+                  }`}
+                >
+                  Surroundings
                 </span>
               </h3>
               <p
-                className={`elegant-paragraph text-base md:text-lg text-gray-300 max-w-2xl mx-auto ${
+                className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4 sm:px-6 ${
                   visibleSections.has("smart-recognition") ? "animate" : ""
                 }`}
               >
-                Reads the subtle cues around you and adjusts without fuss.
+                Access real-time insights drawn from the subtle cues around you
               </p>
             </div>
           </div>
@@ -621,14 +596,14 @@ const Home = React.memo(() => {
       <section
         id="cancel-noise"
         ref={(el) => (sectionRefs.current["cancel-noise"] = el)}
-        className="py-8 md:py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative"
+        className="py-6 sm:py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative"
       >
         {/* Asymmetric radial gradient texture */}
         <div className="absolute inset-0 opacity-16">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_80%_25%,rgba(156,163,175,0.11)_0%,transparent_48%),radial-gradient(ellipse_at_20%_75%,rgba(209,213,219,0.09)_0%,transparent_43%),radial-gradient(ellipse_at_95%_90%,rgba(156,163,175,0.05)_0%,transparent_28%)]"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-1 md:gap-2 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
             <div
               className={`lg:col-span-3 lg:pr-8 order-2 lg:order-1 relative ${
                 visibleSections.has("cancel-noise")
@@ -650,7 +625,6 @@ const Home = React.memo(() => {
                   allowFullScreen
                 />
               </div>
-
             </div>
             <div
               className={`lg:col-span-2 space-y-6 md:space-y-8 order-1 lg:order-2 ${
@@ -659,7 +633,7 @@ const Home = React.memo(() => {
                   : "scroll-animate"
               }`}
             >
-              <h2 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight">
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("cancel-noise") ? "animate" : ""
@@ -689,9 +663,9 @@ const Home = React.memo(() => {
                   noise
                 </span>
               </h2>
-              <div className="space-y-4 md:space-y-6">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
                 <p
-                  className={`elegant-paragraph text-sm md:text-base text-gray-600 leading-relaxed ${
+                  className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${
                     visibleSections.has("cancel-noise") ? "animate" : ""
                   }`}
                 >
@@ -699,7 +673,7 @@ const Home = React.memo(() => {
                   to you, even when it comes to ads and product suggestions.
                 </p>
                 <p
-                  className={`elegant-paragraph text-sm md:text-base text-gray-600 leading-relaxed ${
+                  className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${
                     visibleSections.has("cancel-noise") ? "animate" : ""
                   }`}
                 >
@@ -723,10 +697,10 @@ const Home = React.memo(() => {
         <div className="absolute inset-0 opacity-14">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_30%_10%,rgba(156,163,175,0.1)_0%,transparent_50%),radial-gradient(ellipse_at_85%_70%,rgba(209,213,219,0.08)_0%,transparent_45%),radial-gradient(ellipse_at_10%_85%,rgba(156,163,175,0.06)_0%,transparent_30%)]"></div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-1 md:gap-2 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-2 space-y-6 md:space-y-8">
-              <h2 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 leading-tight">
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("see-through-thoughts") ? "animate" : ""
@@ -756,9 +730,9 @@ const Home = React.memo(() => {
                   thoughts
                 </span>
               </h2>
-              <div className="space-y-4 md:space-y-6">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
                 <p
-                  className={`elegant-paragraph text-sm md:text-base text-gray-600 leading-relaxed ${
+                  className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${
                     visibleSections.has("see-through-thoughts") ? "animate" : ""
                   }`}
                 >
@@ -766,7 +740,7 @@ const Home = React.memo(() => {
                   real-time activity.
                 </p>
                 <p
-                  className={`elegant-paragraph text-sm md:text-base text-gray-600 leading-relaxed ${
+                  className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed ${
                     visibleSections.has("see-through-thoughts") ? "animate" : ""
                   }`}
                 >
@@ -791,7 +765,6 @@ const Home = React.memo(() => {
                   allowFullScreen
                 />
               </div>
-
             </div>
           </div>
         </div>
@@ -814,24 +787,23 @@ const Home = React.memo(() => {
               src="https://www.youtube.com/embed/vRHAVwK7QQM?autoplay=1&mute=1&loop=1&playlist=vRHAVwK7QQM&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0&disablekb=1&fs=0&origin=https://localhost:5174"
               className="w-full h-full"
               style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                width: '100vw',
-                height: '56.25vw',
-                minHeight: '100vh',
-                minWidth: '177.78vh',
-                transform: 'translate(-50%, -50%)'
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                width: "100vw",
+                height: "56.25vw",
+                minHeight: "100vh",
+                minWidth: "177.78vh",
+                transform: "translate(-50%, -50%)",
               }}
               frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
             />
-
           </div>
 
           {/* Caption with darker contrasting background */}
-          <div className="text-center px-4 py-4 md:py-6 relative bg-gradient-to-b from-gray-800 via-gray-850 to-gray-900">
+          <div className="text-center px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 relative bg-gradient-to-b from-gray-800 via-gray-850 to-gray-900">
             {/* Dark background with subtle texture */}
             <div className="absolute inset-0">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-800/95 via-gray-850/98 to-gray-900"></div>
@@ -842,28 +814,50 @@ const Home = React.memo(() => {
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-600/50 to-transparent"></div>
 
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-4xl font-bold text-white mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("intuitive-insights") ? "animate" : ""
                   }`}
                 >
-                  Thoughtful
+                  Seamlessly
                 </span>{" "}
                 <span
                   className={`elegant-title-word ${
                     visibleSections.has("intuitive-insights") ? "animate" : ""
                   }`}
                 >
-                  follow-ups
+                  Integrated
+                </span>{" "}
+                <span
+                  className={`elegant-title-word ${
+                    visibleSections.has("intuitive-insights") ? "animate" : ""
+                  }`}
+                >
+                  into
+                </span>{" "}
+                <span
+                  className={`elegant-title-word ${
+                    visibleSections.has("intuitive-insights") ? "animate" : ""
+                  }`}
+                >
+                  Your
+                </span>{" "}
+                <span
+                  className={`elegant-title-word ${
+                    visibleSections.has("intuitive-insights") ? "animate" : ""
+                  }`}
+                >
+                  Life
                 </span>
               </h3>
               <p
-                className={`elegant-paragraph text-base md:text-lg text-gray-300 max-w-2xl mx-auto ${
+                className={`elegant-paragraph text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto px-4 sm:px-6 ${
                   visibleSections.has("intuitive-insights") ? "animate" : ""
                 }`}
               >
-                Gentle recommendations that slot naturally into your day.
+                Receive personalized suggestions that fit effortlessly into your
+                routine
               </p>
             </div>
           </div>
@@ -881,7 +875,7 @@ const Home = React.memo(() => {
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_60%_30%,rgba(156,163,175,0.08)_0%,transparent_55%),radial-gradient(ellipse_at_15%_70%,rgba(209,213,219,0.06)_0%,transparent_48%),radial-gradient(ellipse_at_90%_15%,rgba(156,163,175,0.04)_0%,transparent_35%)]"></div>
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-1 md:gap-2 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
             <div className="order-2 lg:order-1 lg:col-span-3 relative group flex justify-center">
               <div className="relative max-w-md lg:max-w-lg xl:max-w-xl overflow-hidden rounded-2xl">
                 {/* Background glow effect */}
@@ -955,7 +949,7 @@ const Home = React.memo(() => {
               </div>
             </div>
             <div className="lg:col-span-2 space-y-8 md:space-y-12 order-1 lg:order-2 text-center lg:text-left">
-              <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 <div className="mb-2">
                   <span
                     className={`elegant-title-word ${
@@ -1013,9 +1007,9 @@ const Home = React.memo(() => {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-300/20 via-transparent to-gray-200/30"></div>
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-200/80 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-75/80 to-transparent"></div>
-        <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-8 lg:px-12 text-center">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-12 md:p-16 lg:p-20 shadow-xl">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-16">
+        <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-center">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-10 lg:p-12 shadow-xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-10 md:mb-12 lg:mb-16">
               <span
                 className={`elegant-title-word ${
                   visibleSections.has("about-us") ? "animate" : ""
@@ -1076,8 +1070,8 @@ const Home = React.memo(() => {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-100/25 via-transparent to-white/50"></div>
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-75/80 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/90 to-transparent"></div>
-        <div className="relative z-10 max-w-full mx-auto px-6 md:px-8 lg:px-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center mb-12 md:mb-20">
+        <div className="relative z-10 max-w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
             <span
               className={`elegant-title-word ${
                 visibleSections.has("social-section") ? "animate" : ""
@@ -1107,7 +1101,7 @@ const Home = React.memo(() => {
               social
             </span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             <div
               className={`enhanced-video-container ${
                 visibleSections.has("social-section") ? "animate" : ""

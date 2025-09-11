@@ -83,7 +83,7 @@ const Hero = () => {
             }}
           >
             <motion.h1 
-              className="text-4xl md:text-6xl lg:text-7xl text-white leading-tight font-light"
+              className="text-3xl md:text-5xl lg:text-6xl text-white leading-tight font-light"
               animate={{
                 rotateX: mousePosition.y * 2,
                 rotateY: mousePosition.x * 2,
@@ -158,7 +158,7 @@ const Hero = () => {
 
       {/* XR-style scroll indicator */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.8 }}

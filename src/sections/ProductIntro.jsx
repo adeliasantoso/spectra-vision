@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import LazyImage from "../components/LazyImage";
 import GestureInteractive from "../components/GestureInteractive";
@@ -7,7 +8,7 @@ import spectra1Image from "../assets/images/landing-page/spectra1.webp";
 
 const ProductIntro = () => {
   return (
-    <section className="py-0 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+    <section className="pt-32 pb-20 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
       {/* XR-style ambient background */}
       <div className="absolute inset-0">
         <motion.div
@@ -39,9 +40,9 @@ const ProductIntro = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 -mt-16">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Enhanced Heading */}
-        <div className="text-center mb-0">
+        <div className="text-center mb-24">
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-0"
             initial={{ opacity: 0, y: 50 }}
@@ -77,7 +78,7 @@ const ProductIntro = () => {
         </div>
 
         {/* Interactive Product Image */}
-        <div className="flex justify-center">
+        <div className="flex justify-center py-20">
           <div className="max-w-2xl w-full">
             <GestureInteractive className="block group" sensitivity={0.5}>
               <Link to="/product/spectra-1-0" className="block">
@@ -92,7 +93,7 @@ const ProductIntro = () => {
 
                   {/* Main image container */}
                   <motion.div
-                    className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-0 border border-white/20"
+                    className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
                     style={{
                       boxShadow: "0 20px 60px rgba(0, 0, 0, 0.1)",
                     }}
